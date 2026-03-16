@@ -1,0 +1,36 @@
+aid: apache-thrift
+name: Apache Thrift
+description: >-
+  Apache Thrift is a software framework for scalable cross-language services development. It provides a code generation engine and IDL for building RPC services that work efficiently across C++, Java, Python, PHP, Ruby, Erlang, Go, JavaScript, and many more languages.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - RPC
+  - Cross-Language
+  - Code Generation
+  - IDL
+  - Serialization
+created: '2026-03-16'
+modified: '2026-03-16'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/apache-thrift/refs/heads/main/apis.yml
+specificationVersion: '0.19'
+apis:
+  - aid: apache-thrift:apache-thrift
+    name: Apache Thrift
+    description: >-
+      Thrift provides an Interface Definition Language (IDL) and code generation engine for building cross-language RPC services, with transport and protocol APIs supporting binary, compact, JSON protocols over HTTP, TCP, and other transports in 20+ languages.
+    humanURL: https://thrift.apache.org/docs/
+    tags:
+      - RPC
+      - IDL
+      - Cross-Language
+      - Code Generation
+    properties:
+      - type: Documentation
+        url: https://thrift.apache.org/docs/
+maintainers:
+  - FN: Kin Lane
+    email: info@apievangelist.com
