@@ -31,6 +31,8 @@ apis:
     properties:
       - type: Documentation
         url: https://thrift.apache.org/docs/
+      - type: JSONSchema
+        url: json-schema/thrift-idl.yml
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com

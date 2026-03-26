@@ -1,0 +1,346 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://api-evangelist.com/schemas/apache-thrift/thrift-idl.json
+title: Apache Thrift IDL
+description: >-
+  JSON Schema for representing Apache Thrift Interface Definition Language
+  (IDL) structures. Describes the data model for Thrift service definitions
+  including services, methods, structs, unions, exceptions, enums, typedefs,
+  and constants.
+type: object
+properties:
+  name:
+    type: string
+    description: Name of the Thrift IDL file (without .thrift extension)
+  namespaces:
+    type: object
+    description: >-
+      Language-specific namespace declarations. Keys are language identifiers
+      (e.g., java, py, cpp, go, js, rb, php).
+    additionalProperties:
+      type: string
+  includes:
+    type: array
+    description: Included Thrift IDL files
+    items:
+      type: string
+  cpp_includes:
+    type: array
+    description: C++ specific include directives
+    items:
+      type: string
+  constants:
+    type: array
+    description: Constant definitions
+    items:
+      $ref: '#/$defs/Constant'
+  typedefs:
+    type: array
+    description: Type alias definitions
+    items:
+      $ref: '#/$defs/Typedef'
+  enums:
+    type: array
+    description: Enum type definitions
+    items:
+      $ref: '#/$defs/Enum'
+  structs:
+    type: array
+    description: Struct type definitions
+    items:
+      $ref: '#/$defs/Struct'
+  unions:
+    type: array
+    description: Union type definitions
+    items:
+      $ref: '#/$defs/Union'
+  exceptions:
+    type: array
+    description: Exception type definitions
+    items:
+      $ref: '#/$defs/Exception'
+  services:
+    type: array
+    description: Service definitions containing RPC methods
+    items:
+      $ref: '#/$defs/Service'
+$defs:
+  FieldType:
+    description: >-
+      A Thrift type reference. Can be a base type, container type, or
+      reference to a named type (struct, enum, typedef, exception).
+    oneOf:
+      - type: string
+        description: >-
+          Base type or named type reference
+        enum:
+          - bool
+          - byte
+          - i8
+          - i16
+          - i32
+          - i64
+          - double
+          - string
+          - binary
+          - uuid
+      - type: string
+        description: Reference to a user-defined named type
+      - $ref: '#/$defs/ListType'
+      - $ref: '#/$defs/SetType'
+      - $ref: '#/$defs/MapType'
+  ListType:
+    type: object
+    description: A Thrift list container type
+    required:
+      - type
+      - element_type
+    properties:
+      type:
+        type: string
+        const: list
+      element_type:
+        $ref: '#/$defs/FieldType'
+  SetType:
+    type: object
+    description: A Thrift set container type
+    required:
+      - type
+      - element_type
+    properties:
+      type:
+        type: string
+        const: set
+      element_type:
+        $ref: '#/$defs/FieldType'
+  MapType:
+    type: object
+    description: A Thrift map container type
+    required:
+      - type
+      - key_type
+      - value_type
+    properties:
+      type:
+        type: string
+        const: map
+      key_type:
+        $ref: '#/$defs/FieldType'
+      value_type:
+        $ref: '#/$defs/FieldType'
+  Field:
+    type: object
+    description: >-
+      A field in a struct, union, exception, or method parameter list.
+    required:
+      - id
+      - name
+      - type
+    properties:
+      id:
+        type: integer
+        description: Unique field identifier number
+        minimum: 1
+      name:
+        type: string
+        description: Field name
+      type:
+        $ref: '#/$defs/FieldType'
+      requiredness:
+        type: string
+        description: Field requiredness qualifier
+        enum:
+          - required
+          - optional
+      default_value:
+        description: Default value for the field
+      doc:
+        type: string
+        description: Documentation comment
+      annotations:
+        type: object
+        description: Thrift annotations (key-value metadata)
+        additionalProperties:
+          type: string
+  Constant:
+    type: object
+    description: A constant definition
+    required:
+      - name
+      - type
+      - value
+    properties:
+      name:
+        type: string
+      type:
+        $ref: '#/$defs/FieldType'
+      value:
+        description: The constant value
+      doc:
+        type: string
+  Typedef:
+    type: object
+    description: A type alias definition
+    required:
+      - name
+      - type
+    properties:
+      name:
+        type: string
+        description: The new type name
+      type:
+        $ref: '#/$defs/FieldType'
+      doc:
+        type: string
+      annotations:
+        type: object
+        additionalProperties:
+          type: string
+  Enum:
+    type: object
+    description: An enum type with named integer values
+    required:
+      - name
+      - values
+    properties:
+      name:
+        type: string
+      values:
+        type: array
+        items:
+          type: object
+          required:
+            - name
+          properties:
+            name:
+              type: string
+            value:
+              type: integer
+              description: >-
+                Explicit integer value. If omitted, auto-incremented from
+                the previous value (starting at 0).
+            doc:
+              type: string
+      doc:
+        type: string
+      annotations:
+        type: object
+        additionalProperties:
+          type: string
+  Struct:
+    type: object
+    description: A Thrift struct type
+    required:
+      - name
+    properties:
+      name:
+        type: string
+      fields:
+        type: array
+        items:
+          $ref: '#/$defs/Field'
+      doc:
+        type: string
+      annotations:
+        type: object
+        additionalProperties:
+          type: string
+  Union:
+    type: object
+    description: >-
+      A Thrift union type. Like a struct but only one field may be set at a
+      time. All fields are implicitly optional.
+    required:
+      - name
+    properties:
+      name:
+        type: string
+      fields:
+        type: array
+        items:
+          $ref: '#/$defs/Field'
+      doc:
+        type: string
+      annotations:
+        type: object
+        additionalProperties:
+          type: string
+  Exception:
+    type: object
+    description: >-
+      A Thrift exception type. Structurally identical to a struct but used
+      to declare throwable error types.
+    required:
+      - name
+    properties:
+      name:
+        type: string
+      fields:
+        type: array
+        items:
+          $ref: '#/$defs/Field'
+      doc:
+        type: string
+      annotations:
+        type: object
+        additionalProperties:
+          type: string
+  Service:
+    type: object
+    description: A Thrift service containing RPC method definitions
+    required:
+      - name
+    properties:
+      name:
+        type: string
+        description: Service name
+      extends:
+        type: string
+        description: Parent service name for inheritance
+      methods:
+        type: array
+        items:
+          $ref: '#/$defs/Method'
+      doc:
+        type: string
+      annotations:
+        type: object
+        additionalProperties:
+          type: string
+  Method:
+    type: object
+    description: An RPC method in a Thrift service
+    required:
+      - name
+      - return_type
+    properties:
+      name:
+        type: string
+        description: Method name
+      return_type:
+        description: Return type, or "void" for no return value
+        oneOf:
+          - $ref: '#/$defs/FieldType'
+          - type: string
+            const: void
+      oneway:
+        type: boolean
+        description: >-
+          If true, the method is fire-and-forget with no response. Must
+          have void return type and no exceptions.
+        default: false
+      parameters:
+        type: array
+        description: Method input parameters
+        items:
+          $ref: '#/$defs/Field'
+      exceptions:
+        type: array
+        description: Declared exceptions that the method may throw
+        items:
+          $ref: '#/$defs/Field'
+      doc:
+        type: string
+      annotations:
+        type: object
+        additionalProperties:
+          type: string
