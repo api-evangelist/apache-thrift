@@ -7,10 +7,10 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - RPC
-  - Cross-Language
   - Code Generation
+  - Cross-Language
   - IDL
+  - RPC
   - Serialization
 created: '2026-03-16'
 modified: '2026-03-16'
@@ -24,10 +24,10 @@ apis:
       Thrift provides an Interface Definition Language (IDL) and code generation engine for building cross-language RPC services, with transport and protocol APIs supporting binary, compact, JSON protocols over HTTP, TCP, and other transports in 20+ languages.
     humanURL: https://thrift.apache.org/docs/
     tags:
-      - RPC
-      - IDL
-      - Cross-Language
       - Code Generation
+      - Cross-Language
+      - IDL
+      - RPC
     properties:
       - type: Documentation
         url: https://thrift.apache.org/docs/
