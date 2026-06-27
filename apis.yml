@@ -75,10 +75,10 @@ common:
     url: https://github.com/apache/thrift/releases
   - type: TermsOfService
     url: https://www.apache.org/licenses/
-  - type: SDK
+  - type: SDKs
     url: https://pypi.org/project/thrift/
     title: Python Package
-  - type: SDK
+  - type: SDKs
     url: https://search.maven.org/search?q=org.apache.thrift
     title: Java Maven Package
   - type: Features
