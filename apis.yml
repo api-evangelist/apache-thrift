@@ -63,6 +63,10 @@ apis:
       - type: Documentation
         url: https://thrift.apache.org/docs/concepts.html
 common:
+  - type: VulnerabilityDisclosure
+    url: security/apache-thrift-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/apache-thrift-domain-security.yml
   - type: GitHubRepository
     url: https://github.com/apache/thrift
   - type: Documentation
