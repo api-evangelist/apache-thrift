@@ -75,6 +75,15 @@ apis:
       - type: Documentation
         url: https://thrift.apache.org/docs/concepts.html
 common:
+  - type: SecurityPolicy
+    url: https://github.com/apache/thrift/blob/master/SECURITY.md
+  - type: CodeOfConduct
+    url: https://github.com/apache/.github/blob/main/.github/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/apache/thrift/blob/master/CONTRIBUTING.md
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/apache/thrift/blob/master/LICENSE
   - type: VulnerabilityDisclosure
     url: security/apache-thrift-vulnerability-disclosure.yml
   - type: DomainSecurity
