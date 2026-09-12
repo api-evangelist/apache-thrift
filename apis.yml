@@ -95,6 +95,8 @@ apis:
       - type: Documentation
         url: https://thrift.apache.org/docs/concepts.html
 common:
+  - type: Website
+    url: https://www.apache.org/
   - type: SecurityPolicy
     url: https://github.com/apache/thrift/blob/master/SECURITY.md
   - type: CodeOfConduct
