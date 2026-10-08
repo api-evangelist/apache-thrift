@@ -101,6 +101,12 @@ apis:
       - type: Documentation
         url: https://thrift.apache.org/docs/concepts.html
 common:
+  - type: Plans
+    url: plans/apache-thrift-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/apache-thrift-rate-limits.yml
+  - type: FinOps
+    url: finops/apache-thrift-finops.yml
   - type: Website
     url: https://www.apache.org/
   - type: SecurityPolicy
