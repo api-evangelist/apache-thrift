@@ -1,4 +1,4 @@
-# Apache Thrift (apache-thrift)
+# Apache Thrift
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,99 +64,112 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Apache Thrift is a software framework for scalable cross-language services development. It provides an interface definition language (IDL) and code generation engine for building RPC services across 20+ programming languages including Java, Python, C++, Go, and JavaScript.
+Apache Thrift is a software framework for scalable cross-language services development. It provides an interface definition language (IDL) and code generation engine for building RPC services that work efficiently across C++, Java, Python, PHP, Ruby, Erlang, Go, JavaScript, Node.js, Haskell, C#, Cocoa, Delphi, and many more languages. Originally developed at Facebook, Thrift is now an Apache Software Foundation top-level project used for high-performance internal microservices and APIs.
 
-**URL:** [https://thrift.apache.org/](https://thrift.apache.org/)
+**Areas:** Code Generation · Cross-Language · IDL · RPC · Serialization · Open Source
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Apache Thrift on APIs.io
 
-## Tags:
+Everything profiled for Apache Thrift is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apache-thrift/](https://apis.io/providers/apache-thrift/)** — or go straight to one of the APIs or properties below.
 
- - Code Generation, Cross-Language, IDL, RPC, Serialization, Open Source
+### APIs (2)
 
-## Timestamps
+- [Apache Thrift IDL](https://apis.io/apis/apache-thrift/apache-thrift-idl/) — The Thrift Interface Definition Language (IDL) is used to define data types and service interfaces in a language-neutral format. A .thrift file defines…
+- [Apache Thrift Server API](https://apis.io/apis/apache-thrift/apache-thrift-server-api/) — The Thrift Server API provides server implementations for hosting Thrift services including TSimpleServer (single-threaded), TThreadedServer,…
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-04-19
+### Published properties
 
-## APIs
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-### Apache Thrift IDL
-The Thrift Interface Definition Language for defining data types and service interfaces in language-neutral .thrift files, with code generation for 20+ target languages.
+#### Governance rules (1)
 
-**Human URL:** [https://thrift.apache.org/docs/idl.html](https://thrift.apache.org/docs/idl.html)
+Spectral rulesets for the provider's contracts.
 
-#### Tags:
+- [Apache Thrift — jsonschema rules](https://apis.io/rules/apache-thrift/apache-thrift-jsonschema-spectral-rules/)
 
- - IDL, Code Generation, RPC, Cross-Language
+#### Security (2)
 
-#### Properties
+Authentication, trust centre, and vulnerability disclosure.
 
-- [Documentation](https://thrift.apache.org/docs/idl.html)
-- [Documentation](https://thrift.apache.org/docs/types.html)
-- [JSONSchema](json-schema/thrift-idl.yml)
+- [Apache Thrift Domain Security](https://apis.io/security/apache-thrift/apache-thrift-domain-security/)
+- [Apache Thrift Vulnerability Disclosure](https://apis.io/security/apache-thrift/apache-thrift-vulnerability-disclosure/)
 
-### Apache Thrift Server API
-Server implementations for hosting Thrift services with TSimpleServer, TThreadedServer, TNonblockingServer, and multiple protocol/transport combinations.
+#### Plans and pricing (1)
 
-**Human URL:** [https://thrift.apache.org/docs/concepts.html](https://thrift.apache.org/docs/concepts.html)
+Published plans, tiers and prices.
 
-#### Tags:
+- [Apache Thrift Plans Pricing](https://apis.io/plans/apache-thrift/apache-thrift-plans-pricing/)
 
- - Server, RPC, Protocol, Transport
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://thrift.apache.org/docs/concepts.html)
+- [Apache Thrift Rate Limits](https://apis.io/rate-limits/apache-thrift/apache-thrift-rate-limits/)
 
-## Common Properties
+#### FinOps (1)
 
-- [GitHubRepository](https://github.com/apache/thrift)
+What the API costs to run, by operation.
+
+- [Apache Thrift Finops](https://apis.io/finops/apache-thrift/apache-thrift-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.apache.org/)
 - [Documentation](https://thrift.apache.org/docs/)
-- [Portal](https://thrift.apache.org/)
-- [GettingStarted](https://thrift.apache.org/tutorial/)
-- [ReleaseNotes](https://github.com/apache/thrift/releases)
-- [TermsOfService](https://www.apache.org/licenses/)
-- [Python Package](https://pypi.org/project/thrift/)
-- [Java Maven Package](https://search.maven.org/search?q=org.apache.thrift)
+- [Getting started](https://thrift.apache.org/tutorial/)
+- [Terms of service](https://www.apache.org/licenses/)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| Cross-Language Code Generation | Generate client and server stubs for 20+ programming languages from a single IDL file. |
-| Binary Serialization | Compact binary serialization (TCompactProtocol) for high-performance communication. |
-| Multiple Transports | TSocket, TFramedTransport, TFileTransport, TZlibTransport, and TMemoryBuffer transports. |
-| Multiple Protocols | TBinaryProtocol, TCompactProtocol, TJSONProtocol serialization formats. |
-| Async Server Support | Non-blocking async server for high-throughput service deployments. |
-| Versioned Schema Evolution | Optional and default fields enable backward-compatible schema evolution. |
+**Kin Score 32.7** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 7.2 |
+| Contract governance | 9.8 |
+| Operational transparency | 39.5 |
+| Developer ergonomics | 38.1 |
+| Access clarity | 18.4 |
 
-| Name | Description |
-|------|-------------|
-| Internal Microservices | High-performance binary RPC between internal microservices in polyglot environments. |
-| Cross-Language APIs | Type-safe APIs that work identically across Java, Python, C++, and other languages. |
-| Distributed Systems | Service mesh communication with efficient binary serialization. |
+**Agent readiness 0.6** — human-only
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Apache Cassandra | Cassandra uses Thrift (legacy) for client communication. |
-| Apache HBase | HBase Thrift gateway for non-Java clients. |
-| Apache Hadoop | Hive Thrift server provides JDBC/ODBC access to Hive. |
+**Regulatory alignment 15.7** — Horizontal (data, software, accessibility, platform)
 
-## Artifacts
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apache-thrift/](https://apis.io/providers/apache-thrift/).
 
-Machine-readable API specifications organized by format.
+## How this profile is made
 
-### JSON Schema
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-- [Thrift IDL Schema](json-schema/thrift-idl.yml)
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Apache Thrift: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-## Maintainers
+## Open an issue
 
-**FN:** Kin Lane
-
-**Email:** info@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apache-thrift/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
